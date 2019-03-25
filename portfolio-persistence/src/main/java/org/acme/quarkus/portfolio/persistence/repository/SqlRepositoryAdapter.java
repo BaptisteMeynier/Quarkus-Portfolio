@@ -8,6 +8,7 @@ import org.acme.quarkus.portfolio.business.model.enums.Devise;
 import org.acme.quarkus.portfolio.business.repository.RepositoryPort;
 
 import javax.annotation.Resource;
+import javax.enterprise.context.ApplicationScoped;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -16,8 +17,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import javax.inject.Named;
 import java.util.Optional;
 
+
+@Named
+@ApplicationScoped
 public class SqlRepositoryAdapter implements RepositoryPort {
 
     private static final String COUNT_QUERY = "SELECT count(ID) FROM PORTFOLIO";
@@ -27,7 +32,7 @@ public class SqlRepositoryAdapter implements RepositoryPort {
     private static final String UPDATE_QUERY = "UPDATE PORTFOLIO SET %s WHERE CODE='%s'";
     private static final String DELETE_QUERY = "DELETE FROM PORTFOLIO WHERE CODE='%s'";
 
-    @Resource(lookup = "java:jboss/datasources/PortfolioDS")
+   // @Resource(lookup = "java:jboss/datasources/PortfolioDS")
     private DataSource ds;
 
     public Optional<Portfolio> getPortfolio(final PortfolioKey key) {

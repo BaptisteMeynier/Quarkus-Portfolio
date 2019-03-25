@@ -4,7 +4,8 @@ import javax.ws.rs.core.Link;
 import javax.ws.rs.core.UriInfo;
 import java.util.stream.Stream;
 
-import static com.softeam.presentation.kubernetest.portfolio.webservice.rest.pagination.PaginationConstants.*;
+import static org.acme.quarkus.portfolio.webservice.rest.pagination.PaginationConstants.*;
+
 
 public class LinkBuilder {
 

@@ -1,7 +1,8 @@
 package org.acme.quarkus.portfolio.webservice.rest.provider;
 
-import com.softeam.presentation.kubernetest.portfolio.webservice.rest.pagination.LinkBuilder;
-import com.softeam.presentation.kubernetest.portfolio.webservice.rest.pagination.Page;
+
+import org.acme.quarkus.portfolio.webservice.rest.pagination.LinkBuilder;
+import org.acme.quarkus.portfolio.webservice.rest.pagination.Page;
 
 import javax.ws.rs.container.ContainerResponseFilter;
 
@@ -13,9 +14,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
-import static com.softeam.presentation.kubernetest.portfolio.webservice.rest.pagination.PaginationConstants.X_PAGE_COUNT;
-import static com.softeam.presentation.kubernetest.portfolio.webservice.rest.pagination.PaginationConstants.X_TOTAL_COUNT;
 import static javax.ws.rs.core.HttpHeaders.LINK;
+import static org.acme.quarkus.portfolio.webservice.rest.pagination.PaginationConstants.X_PAGE_COUNT;
+import static org.acme.quarkus.portfolio.webservice.rest.pagination.PaginationConstants.X_TOTAL_COUNT;
 
 public class LinkPaginationContainerResponseFilter implements ContainerResponseFilter {
 

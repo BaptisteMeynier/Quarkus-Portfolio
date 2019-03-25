@@ -1,0 +1,16 @@
+2019-03-25 22:38:54,788 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[4851] WARN  [io.qua.jae.run.JaegerDeploymentTemplate] (main) Jaeger service name has not been defined (e.g. JAEGER_SERVICE_NAME environment variable or system properties)
+2019-03-25 22:38:54,791 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[4851] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.006s. Listening on: http://[::]:8080
+2019-03-25 22:38:54,792 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[4851] INFO  [io.quarkus] (main) Installed features: [cdi, jaeger, jdbc-mariadb, resteasy, smallrye-health, smallrye-metrics, smallrye-openapi, smallrye-opentracing]
+2019-03-25 22:43:51,463 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[4851] INFO  [io.quarkus] (main) Quarkus stopped in 0.000s
+2019-03-25 22:45:19,869 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[5324] WARN  [io.qua.jae.run.JaegerDeploymentTemplate] (main) Jaeger service name has not been defined (e.g. JAEGER_SERVICE_NAME environment variable or system properties)
+2019-03-25 22:45:19,872 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[5324] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.006s. Listening on: http://[::]:8080
+2019-03-25 22:45:19,872 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[5324] INFO  [io.quarkus] (main) Installed features: [cdi, jaeger, jdbc-mariadb, resteasy, smallrye-health, smallrye-metrics, smallrye-openapi, smallrye-opentracing]
+2019-03-25 22:47:10,873 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[5324] INFO  [io.quarkus] (main) Quarkus stopped in 0.000s
+2019-03-25 22:48:36,410 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[5578] WARN  [io.qua.jae.run.JaegerDeploymentTemplate] (main) Jaeger service name has not been defined (e.g. JAEGER_SERVICE_NAME environment variable or system properties)
+2019-03-25 22:48:36,413 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[5578] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.006s. Listening on: http://[::]:8080
+2019-03-25 22:48:36,414 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[5578] INFO  [io.quarkus] (main) Installed features: [cdi, jaeger, jdbc-mariadb, resteasy, smallrye-health, smallrye-metrics, smallrye-openapi, smallrye-opentracing]
+2019-03-25 22:51:12,354 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[5578] INFO  [io.quarkus] (main) Quarkus stopped in 0.001s
+2019-03-25 22:54:09,629 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[6029] WARN  [io.qua.jae.run.JaegerDeploymentTemplate] (main) Jaeger service name has not been defined (e.g. JAEGER_SERVICE_NAME environment variable or system properties)
+2019-03-25 22:54:09,632 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[6029] INFO  [io.quarkus] (main) Quarkus 0.12.0 started in 0.006s. Listening on: http://[::]:8080
+2019-03-25 22:54:09,632 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[6029] INFO  [io.quarkus] (main) Installed features: [cdi, jaeger, jdbc-mariadb, resteasy, smallrye-health, smallrye-metrics, smallrye-openapi, smallrye-opentracing]
+2019-03-25 22:54:53,406 desktop-fui7h3k portfolio-app-1.0-SNAPSHOT-runner[6029] INFO  [io.quarkus] (main) Quarkus stopped in 0.001s
