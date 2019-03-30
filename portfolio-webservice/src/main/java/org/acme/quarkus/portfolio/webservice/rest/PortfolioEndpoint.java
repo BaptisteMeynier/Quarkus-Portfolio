@@ -11,6 +11,7 @@ import org.eclipse.microprofile.metrics.MetricUnits;
 import org.eclipse.microprofile.metrics.annotation.Counted;
 import org.eclipse.microprofile.metrics.annotation.Metered;
 import org.eclipse.microprofile.metrics.annotation.Timed;
+import org.jboss.logging.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -41,7 +42,9 @@ import java.util.Optional;
         absolute = true)*/
 public class PortfolioEndpoint {
 
-  //  @Inject
+    private static final Logger LOG = Logger.getLogger(PortfolioEndpoint.class);
+
+
     private PortfolioServiceAdapter portfolioServiceAdapter = new PortfolioServiceAdapter();
 
     @GET
@@ -49,6 +52,8 @@ public class PortfolioEndpoint {
             @BeanParam PaginationParam queryParams,
             @Suspended AsyncResponse asyncResponse
     ) {
+        LOG.info("doGet");
+        LOG.info(portfolioServiceAdapter!=null);
         int offset = queryParams.per_page * (queryParams.page - 1);
 
         final List<Portfolio> portfolios = portfolioServiceAdapter.getPortfolios(offset, queryParams.per_page);

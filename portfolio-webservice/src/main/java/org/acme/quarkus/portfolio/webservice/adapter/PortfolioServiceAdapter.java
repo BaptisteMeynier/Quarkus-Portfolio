@@ -3,6 +3,7 @@ package org.acme.quarkus.portfolio.webservice.adapter;
 
 import org.acme.quarkus.portfolio.business.model.Portfolio;
 import org.acme.quarkus.portfolio.business.model.PortfolioKey;
+import org.acme.quarkus.portfolio.business.service.PortfolioService;
 import org.acme.quarkus.portfolio.business.service.PortfolioServicePort;
 
 import javax.inject.Inject;

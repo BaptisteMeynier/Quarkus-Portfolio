@@ -22,9 +22,6 @@ import javax.inject.Named;
 import java.util.Optional;
 
 
-@Named
-@ApplicationScoped
-@RegisterForReflection
 public class SqlRepositoryAdapter implements RepositoryPort {
 
     private static final String COUNT_QUERY = "SELECT count(ID) FROM PORTFOLIO";
