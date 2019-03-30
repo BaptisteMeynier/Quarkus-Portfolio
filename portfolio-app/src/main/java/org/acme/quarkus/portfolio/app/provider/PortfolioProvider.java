@@ -18,8 +18,6 @@ import java.util.ServiceLoader;
 import org.jboss.logging.Logger;
 
 @ApplicationScoped
-@RegisterForReflection
-@Named
 public class PortfolioProvider {
 
     private static final Logger LOG = Logger.getLogger(PortfolioProvider.class);
