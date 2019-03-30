@@ -2,6 +2,7 @@ package org.acme.quarkus.portfolio.persistence.repository;
 
 
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import org.acme.quarkus.portfolio.business.model.Portfolio;
 import org.acme.quarkus.portfolio.business.model.PortfolioKey;
 import org.acme.quarkus.portfolio.business.model.enums.Devise;
@@ -23,6 +24,7 @@ import java.util.Optional;
 
 @Named
 @ApplicationScoped
+@RegisterForReflection
 public class SqlRepositoryAdapter implements RepositoryPort {
 
     private static final String COUNT_QUERY = "SELECT count(ID) FROM PORTFOLIO";

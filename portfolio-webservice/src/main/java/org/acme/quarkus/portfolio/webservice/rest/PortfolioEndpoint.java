@@ -27,7 +27,7 @@ import java.util.Optional;
 @Path("/portfolio")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Metered
+/*@Metered
 @Counted(unit = MetricUnits.NONE,
         name = "itemsCheckedOut",
         absolute = true,
@@ -38,11 +38,11 @@ import java.util.Optional;
 @Timed(name = "itemsProcessed",
         description = "Metrics to monitor the times of get portfolio.",
         unit = MetricUnits.MILLISECONDS,
-        absolute = true)
+        absolute = true)*/
 public class PortfolioEndpoint {
 
-    @Inject
-    private PortfolioServiceAdapter portfolioServiceAdapter;
+  //  @Inject
+    private PortfolioServiceAdapter portfolioServiceAdapter = new PortfolioServiceAdapter();
 
     @GET
     public void doGet(
@@ -67,11 +67,11 @@ public class PortfolioEndpoint {
 
     @GET
     @Path("{key}")
-    public Response doGet(@PathParam("key") String key) {
-        Response res = Response.status(Response.Status.NOT_FOUND).build();
+    public Portfolio doGet(@PathParam("key") String key) {
+        Portfolio res = null;
         final Optional<Portfolio> portfolio = portfolioServiceAdapter.getPortfolio(new PortfolioKey(key));
         if(portfolio.isPresent()){
-            res = Response.ok(portfolio.get()).build();
+            res = portfolio.get();
         }
         return res;
     }
