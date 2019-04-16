@@ -12,12 +12,14 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Singleton;
 import java.nio.file.ProviderNotFoundException;
 import java.util.Iterator;
 import java.util.ServiceLoader;
 import org.jboss.logging.Logger;
 
 @ApplicationScoped
+@Singleton
 public class PortfolioProvider {
 
     private static final Logger LOG = Logger.getLogger(PortfolioProvider.class);
@@ -26,6 +28,7 @@ public class PortfolioProvider {
     private RepositoryPort repositoryPort = defaultRepositoryProvider();
 
     @Produces
+    @ApplicationScoped
     public PortfolioServicePort getPortfolioService() {
         return new PortfolioService(repositoryPort);
     }

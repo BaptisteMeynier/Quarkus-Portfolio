@@ -45,11 +45,6 @@
       <artifactId>quarkus-smallrye-opentracing</artifactId>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-smallrye-openapi</artifactId>
-      <scope>provided</scope>
-    </dependency>
   </dependencies>
   <build>
     <pluginManagement>
