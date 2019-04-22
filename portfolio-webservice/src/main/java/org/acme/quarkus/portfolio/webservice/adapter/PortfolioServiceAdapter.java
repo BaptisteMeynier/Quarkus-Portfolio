@@ -3,19 +3,26 @@ package org.acme.quarkus.portfolio.webservice.adapter;
 
 import org.acme.quarkus.portfolio.business.model.Portfolio;
 import org.acme.quarkus.portfolio.business.model.PortfolioKey;
-import org.acme.quarkus.portfolio.business.service.PortfolioService;
 import org.acme.quarkus.portfolio.business.service.PortfolioServicePort;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 import java.util.Optional;
 
-@Named
+@ApplicationScoped
 public class PortfolioServiceAdapter {
 
+    PortfolioServicePort portfolioServicePort;
+
+    public PortfolioServiceAdapter() {
+    }
+
     @Inject
-    private PortfolioServicePort portfolioServicePort;
+    public PortfolioServiceAdapter(PortfolioServicePort portfolioServicePort) {
+        this.portfolioServicePort = portfolioServicePort;
+    }
 
     public List<Portfolio> getPortfolios(int offset, int totalReturnedValue){
         return portfolioServicePort.getPortfolios(offset, totalReturnedValue);

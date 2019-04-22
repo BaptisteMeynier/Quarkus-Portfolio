@@ -45,7 +45,8 @@ public class PortfolioEndpoint {
     private static final Logger LOG = Logger.getLogger(PortfolioEndpoint.class);
 
 
-    private PortfolioServiceAdapter portfolioServiceAdapter = new PortfolioServiceAdapter();
+    @Inject
+    PortfolioServiceAdapter portfolioServiceAdapter;
 
     @GET
     public void doGet(

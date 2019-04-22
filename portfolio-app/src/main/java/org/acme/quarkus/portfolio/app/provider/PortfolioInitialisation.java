@@ -12,7 +12,9 @@ import org.acme.quarkus.portfolio.business.service.PortfolioServicePort;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Produces;
+import javax.inject.Inject;
 
+import org.acme.quarkus.portfolio.persistence.repository.SqlRepositoryAdapter;
 import org.jboss.logging.Logger;
 
 import java.nio.file.ProviderNotFoundException;
@@ -23,49 +25,13 @@ import java.util.ServiceLoader;
 public class PortfolioInitialisation {
 
     private static final Logger LOGGER = Logger.getLogger(PortfolioInitialisation.class);
-    private static final String DEFAULT_PERSISTENCE_PROVIDER = "org.acme.quarkus.portfolio.persistence.repository.SqlRepositoryAdapter";
 
+    @Inject
+    RepositoryPort repositoryPort;
 
-
-    void onStart(@Observes StartupEvent ev) {
-        LOGGER.info("The application is starting...{}");
-    }
-
-    void onStop(@Observes ShutdownEvent ev) {
-        LOGGER.info("The application is stopping... {}");
-    }
-
-
-  //  private RepositoryPort repositoryPort = defaultRepositoryProvider();
-
-  /*  @Produces
+    @Produces
     public PortfolioServicePort getPortfolioService() {
-        return  new PortfolioService(null);
-       // return new PortfolioService(repositoryPort);
+        return  new PortfolioService(repositoryPort);
     }
-*/
-
-  /*  public RepositoryPort defaultRepositoryProvider() {
-        return provider(DEFAULT_PERSISTENCE_PROVIDER).create();
-    }
-
-    public RepositoryProvider provider(String providerName) {
-        LOGGER.info("1)" + providerName);
-        ServiceLoader<RepositoryProvider> loader = ServiceLoader.load(RepositoryProvider.class);
-        LOGGER.info("2)" + loader);
-        Iterator<RepositoryProvider> it = loader.iterator();
-        LOGGER.info("3)" + loader);
-        while (it.hasNext()) {
-            LOGGER.info("4)");
-            RepositoryProvider provider = it.next();
-            LOGGER.info("5)");
-            if (providerName.equals(provider.getClass().getName())) {
-                LOGGER.info("6)");
-                return provider;
-            }
-            LOGGER.info("7)");
-        }
-        throw new ProviderNotFoundException(String.format("Exchange Rate provider %s not found",providerName));
-    }*/
 
 }
