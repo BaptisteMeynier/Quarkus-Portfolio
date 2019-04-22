@@ -51,8 +51,6 @@ public class SqlRepositoryAdapter implements RepositoryPort {
 
     private List<Portfolio> getPortfolios(final String query){
         final List<Portfolio> portfolios = new ArrayList<>();
-        System.out.println(query);
-        System.out.println(ds);
         try (final Connection connection = ds.getConnection();
              final Statement statement = connection.createStatement();
              final ResultSet resultSet = statement.executeQuery(query);
