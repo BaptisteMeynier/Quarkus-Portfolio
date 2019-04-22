@@ -30,7 +30,7 @@ public class SqlRepositoryAdapter implements RepositoryPort {
     private static final String DELETE_QUERY = "DELETE FROM PORTFOLIO WHERE CODE='%s'";
 
     @Inject
-    private DataSource ds;
+    DataSource ds;
 
     public Optional<Portfolio> getPortfolio(final PortfolioKey key) {
 

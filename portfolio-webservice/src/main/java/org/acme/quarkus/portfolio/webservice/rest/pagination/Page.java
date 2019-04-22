@@ -1,11 +1,14 @@
 package org.acme.quarkus.portfolio.webservice.rest.pagination;
 
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
 @XmlRootElement(name="page")
 @XmlAccessorType(XmlAccessType.FIELD)
+@RegisterForReflection
 public class Page<T> {
 
     private List<T> entities;

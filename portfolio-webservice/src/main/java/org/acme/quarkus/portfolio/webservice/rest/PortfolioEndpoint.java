@@ -3,6 +3,7 @@ package org.acme.quarkus.portfolio.webservice.rest;
 import org.acme.quarkus.portfolio.business.model.Portfolio;
 import org.acme.quarkus.portfolio.business.model.PortfolioKey;
 import org.acme.quarkus.portfolio.webservice.adapter.PortfolioServiceAdapter;
+import org.acme.quarkus.portfolio.webservice.rest.dto.PortfolioDTO;
 import org.acme.quarkus.portfolio.webservice.rest.pagination.Page;
 import org.acme.quarkus.portfolio.webservice.rest.param.PaginationParam;
 import org.acme.quarkus.portfolio.webservice.rest.param.PortfolioParam;
@@ -24,6 +25,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Path("/portfolio")
 @Produces(MediaType.APPLICATION_JSON)
@@ -60,9 +62,11 @@ public class PortfolioEndpoint {
         final List<Portfolio> portfolios = portfolioServiceAdapter.getPortfolios(offset, queryParams.per_page);
         int total = portfolioServiceAdapter.countPortfolio();
 
-        final Page<Portfolio> paginated =
+        List<PortfolioDTO> collect = portfolios.stream().map(port -> new PortfolioDTO(port.getKey().getCode(), port.getAmount(), port.getDevise(), port.getManager())).collect(Collectors.toList());
+
+        final Page<PortfolioDTO> paginated =
                 new Page<>(
-                        portfolios,
+                        collect,
                         queryParams.page,
                         queryParams.per_page,
                         total / queryParams.per_page,
