@@ -171,6 +171,7 @@
                                 <configuration>
                                     <enableHttpUrlHandler>true</enableHttpUrlHandler>
                                     <additionalBuildArgs>--report-unsupported-elements-at-runtime</additionalBuildArgs>
+                                    <reportErrorsAtRuntime>true</reportErrorsAtRuntime>
                                 </configuration>
                             </execution>
                         </executions>
